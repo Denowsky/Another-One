@@ -13,7 +13,7 @@ def Find_Lucky_Ticket(arg1):
     sum_One = 0
     sum_Two = 0
     count = 0
-    if len(arg1) != 6:
+    if not arg1.isdigit() or len(arg1) != 6:
         print("Воу, нужно шестизначное число, повтори попытку")
         return
     else:
@@ -30,22 +30,22 @@ def Find_Lucky_Ticket(arg1):
     else:
         print(f'{arg1} -> no')
 
-def Reserv_Method(arg1):
-    temp = arg1
-    sum_one = 0
-    sum_two = 0
-    while temp>0:
-        sum_one+= int(temp%10)
-        temp=int(temp/10)
-        print(sum_one)
-    print(temp)
-    temp = arg1
-    while temp>0:
-        sum_one+= int(temp%10)
-        temp=int(temp/10)
-        print(sum_one)
-#end of methods
+def extract_sum(arg1, arg2):
+    count = 0
+    size = len(str(arg1))
+    sum = 0
+    while count<size/2:
+        sum+= int(arg1%10)
+        arg1=int(arg1/10)
+        count+=1
+    return sum
 
 first_num = int(input('Введите шестизначное число: '))
 # Find_Lucky_Ticket(first_num)
-Reserv_Method(first_num)
+sumOne = extract_sum(first_num)
+sumTwo = extract_sum(first_num)
+print(sumOne)
+print(sumTwo)
+
+
+
