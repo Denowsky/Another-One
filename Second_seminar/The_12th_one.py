@@ -5,18 +5,14 @@
 # Помогите Кате отгадать задуманные Петей числа. 
 # 4 4 -> 2 2
 # 5 6 -> 2 3
+import random
 
-# import random
-# x1=int(round(random.uniform(0,1000),0))
-# y2=int(round(random.uniform(0,1000),0))
-# print(x1, y2)
-# s=x1+y2
-# p=x1*y2
-s = 15
-p = 50
-print(f'{s} {p} ->', end=" ")
-d = abs(s*s-4*p)
-x = int((s+abs(d))/2)
-y = int((s-abs(d))/2)
-print(x, y)
-
+x1 = int(round(random.uniform(0,1000),0))
+y1 = int(round(random.uniform(0,1000),0))
+s = x1+y1
+p = x1*y1
+x = 0
+while x*(s-x)!=p:
+    x+=1
+y = s-x
+print(f'{s} {p} -> {x} {y}')
