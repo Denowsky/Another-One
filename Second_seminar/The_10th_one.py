@@ -29,9 +29,9 @@ def Find_Count(arg1):
             i+=1
             continue # если число == 0, то цикл продолжается, но count+1
         i+=1
-    min = Math.Min(len(arg1)-count, count)
+    Min = min(len(arg1)-count, count)
     print(len(arg1), end=" -> ")
     print(*arg1, sep=" ")
-    print(min)
+    print(Min)
     
 Find_Count(Num_list)
