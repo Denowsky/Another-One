@@ -32,9 +32,9 @@ try:
     temp = []
     for v in price_for_en.values():
         temp.append(v)
-    count_char = ''.join(temp)
+    which_char = ''.join(temp)
     for i in n.upper():
-            if i in count_char:
+            if i in which_char:
                 for j in price_for_en:
                     if i in price_for_en[j]:
                         price_count+=j
