@@ -25,17 +25,25 @@
 # Вывод: 12
 
 try:
-    n = input('Введите размер массива: ')
-    max_range = int(n/2)
-    list_1 = []
-    for i in range(n):
-        list_1.append(random.randint(1, max_range))
-    print(*list_1, sep=" ")
-    count = 0
-    for i in list_1:
-        if x == list_1[i]:
-            count+=1
-    print(f'Вывод: {count}')
+    n = input('Введите слово(анг/рус): ')
+    price_for_ru = {1: 'АВЕИНОРСТ',2:'ДКЛМП',3:'БГЁЬЯ', 4: 'ЙЫ', 5: 'ЖЗХЦЧ', 8: 'ШЭЮ',10: 'ФЩЪ'}
+    price_for_en = {1: 'AEIOULNSTR',2:'DG',3:'BCMP', 4: 'FHVWY', 5: 'K', 8: 'JX',10: 'QZ'}
+    price_count = 0
+    temp = []
+    for v in price_for_en.values():
+        temp.append(v)
+    count_char = ''.join(temp)
+    for i in n.upper():
+            if i in count_char:
+                for j in price_for_en:
+                    if i in price_for_en[j]:
+                        price_count+=j
+            else:
+                for j in price_for_ru:
+                    if i in price_for_ru[j]:
+                        price_count+=j
+    print(price_count)
 
 except:
     print('Ввод не совсем корректный. Попробуйте еще раз!')
+

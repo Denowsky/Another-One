@@ -19,9 +19,14 @@ try:
     for i in range(n):
         list_1.append(random.randint(1, n))
     print(*list_1, sep=" ")
+    min = x
+    list_1.sort
     for i in list_1:
-        if x == list_1[i]:
-            print(list_1[i])
+        dif = abs(x-i)
+        if dif<min:
+            min = dif
+            result = i
+    print(result)
 
 except:
     print('Ввод не совсем корректный. Попробуйте еще раз!')

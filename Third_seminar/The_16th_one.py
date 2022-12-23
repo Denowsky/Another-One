@@ -23,7 +23,7 @@ try:
     print(*list_1, sep=" ")
     count = 0
     for i in list_1:
-        if x == list_1[i]:
+        if i == x:
             count+=1
     print(f'Вывод: {count}')
 
