@@ -13,4 +13,24 @@
 
 # Output: 11 6
 # 6 12
-
+import random
+def ListAppend(list, size):
+    for i in range(size):
+        list.append(random.randint(1, size))
+def CheckRepeat(arg1,arg2):
+    print(arg1)
+    print(arg2)
+    result = []
+    for i in set(arg1):
+        for j in set(arg2):
+            if j==i:
+                result.append(j)
+    print(result)
+                
+list_1 = []
+list_2 = []
+n = int(input('Введите кол-во элементов первого набора: '))
+m = int(input('Введите кол-во элементов второго набора: '))
+ListAppend(list_1,n)
+ListAppend(list_2,m)
+CheckRepeat(list_1,list_2)
