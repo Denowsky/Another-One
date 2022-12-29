@@ -16,7 +16,7 @@ while size<1:
         break
     print("Где деньги, Лебовски?)")
     
-for num in range(1,size):
+for num in range(0,size):
     random_number = int(round(random.uniform(0,1),0))
     Num_list.append(random_number)
 
