@@ -33,5 +33,8 @@
 # После выбора действия выполняется функция, реализующая это действие.
 # После завершения работы функции пользователь возвращается в меню. -->
 
-list = []
-print(type(list))
+import func
+file = ('book.txt')
+# func.WriteFile(file)
+print(func.ReadFile(file))
+func.FindUsers(file)
