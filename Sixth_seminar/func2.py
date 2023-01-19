@@ -15,7 +15,8 @@ def print_lines(dataprint):
     while(True):
         for line in dataprint:
             print(",".join(line))
-        if 
+        answer = input("Enter для возврата в меню:>")
+        if answer == "": return
 
 def show_lines():
     result = []
@@ -26,14 +27,16 @@ def show_lines():
         return result
 
 def find_lines():
-    show_me = []
-    for line in show_lines():
-        show_me.append(",".join(line))
-    request = input("Запрос: ")
-    clear_screen()
-    show_me = list(filter(lambda line: request in line, show_me))
-    show_me = show_me[0].split(",")
-    print(f'Фамилия: {show_me[0]}\nИмя: {show_me[1]}\nОтчество: {show_me[2]}\nТелефон: {show_me[3]}')
+    while(True):
+        show_me = []
+        for line in show_lines():
+            show_me.append(",".join(line))
+        request = input("Запрос: ")
+        show_me = list(filter(lambda line: request in line, show_me))
+        show_me = show_me[0].split(",")
+        print(f'Фамилия: {show_me[0]}\nИмя: {show_me[1]}\nОтчество: {show_me[2]}\nТелефон: {show_me[3]}')
+        answer = input("Enter для возврата в меню:>")
+        if answer == "": return
 
 # def add_lines():
 #     while (True):
