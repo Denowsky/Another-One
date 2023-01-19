@@ -46,15 +46,15 @@ if __name__ == '__main__':
                 func2.print_lines(func2.show_lines())
             case "2":
                 func2.find_lines()          
-            # case "3":
-            #     func2.
-            # case "4":
-            #     func2.
-            # case "5":
-            #     func2.
+            case "3":
+                func2.add_lines()
+            case "4":
+                func2.remove_lines()
+            case "5":
+                func2.change_lines()
             case "6":
                 exit(0)
-            # case _:
-            #     print("неверный ввод")
-            #     func.time.sleep(3)1
+            case _:
+                print("неверный ввод")
+                func2.time.sleep(3)
             

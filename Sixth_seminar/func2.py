@@ -7,10 +7,16 @@ def clear_screen():
 # 1 - Показать все записи +
 # 2 - Найти запись по вхождению частей имени +
 # 3 - Найти запись по телефону +
-# 4 - Добавить новый контакт -
+# 4 - Добавить новый контакт +
 # 5 - Удалить контакт -
 # 6 - Изменить номер телефона у контакта -
 # 7 - Выход +
+
+def save_lines(data):
+    with open('book.txt', 'a', encoding='utf8') as datafile:
+        data_to_save = ",".join(data) + "\n"
+        datafile.writelines(data_to_save)
+            
 def print_lines(dataprint):
     while(True):
         for line in dataprint:
@@ -38,20 +44,46 @@ def find_lines():
         answer = input("Enter для возврата в меню:>")
         if answer == "": return
 
-# def add_lines():
-#     while (True):
-#             print('Добавление записи("" - выход)')
-#             last_name = input("Фамилия: ")
-#             first_name = input("Имя: ")
-#             patronymic = input("Отчество: ")
-#             phone_number = input("Номер телефона: ")
-#             data_to_save = [last_name, first_name, patronymic, phone_number]
-#             if "" in data_to_save: return
-#             (data_to_save)
+def add_lines():
+    while (True):
+            print('Добавление записи("" - выход)')
+            last_name = input("Фамилия: ")
+            first_name = input("Имя: ")
+            patronymic = input("Отчество: ")
+            phone_number = input("Номер телефона: ")
+            data_to_save = [last_name, first_name, patronymic, phone_number]
+            if "" in data_to_save: return
+            save_lines(data_to_save)
 
-# def remove_lines():
+def remove_lines(): # попробуй .pop
+    while(True):
+        show_me = []
+        for line in show_lines():
+            show_me.append(",".join(line))
+        request = input("Кого удалим: ")
+        show_me = list(filter(lambda line: request not in line, show_me))
+        with open('book.txt', 'w', encoding='utf8') as datafile:
+            for line in show_me:
+                datafile.write(line+'\n')
+        answer = input(f"Запись {request} удалена. Enter для возврата в меню:>")
+        if answer == "": return
+    
 
-
-# def change_lines():
-
-# print_lines(show_lines())
+def change_lines():
+     while(True):
+        show_me = []
+        for line in show_lines():
+            show_me.append(",".join(line))
+        request = input("Какой номер нужно обновить: ")
+        update_number = []
+        update_number = (show_me[0]).split(",")
+        update_number[3] = (" "+input("Новый номер: "))
+        show_me = list(filter(lambda line: request not in line, show_me))
+        show_me.append(",".join(update_number))
+        print(show_me)
+        with open('book.txt', 'w', encoding='utf8') as datafile:
+            for line in show_me:
+                datafile.write(line+'\n')
+        answer = input(f"Запись {request} обновлена. Enter для возврата в меню:>")
+        if answer == "": return
+       
