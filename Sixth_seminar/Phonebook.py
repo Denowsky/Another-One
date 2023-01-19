@@ -33,8 +33,28 @@
 # После выбора действия выполняется функция, реализующая это действие.
 # После завершения работы функции пользователь возвращается в меню. -->
 
-import func
-file = ('book.txt')
-# func.WriteFile(file)
-print(func.ReadFile(file))
-func.FindUsers(file)
+import func2
+
+if __name__ == '__main__':
+    menu = '''1 - Показать все записи\n2 - Найти запись по имени, фамилии, отчеству или телефону\n3 - Добавить новый контакт\n4 - Удалить контакт\n5 - Изменить номер телефона у контакта\n6 - Выход'''
+    while (True):
+        func2.clear_screen()
+        print(menu)
+        answer = input('>:')
+        match answer:
+            case "1":
+                func2.print_lines(func2.show_lines())
+            case "2":
+                func2.find_lines()          
+            # case "3":
+            #     func2.
+            # case "4":
+            #     func2.
+            # case "5":
+            #     func2.
+            case "6":
+                exit(0)
+            # case _:
+            #     print("неверный ввод")
+            #     func.time.sleep(3)1
+            
