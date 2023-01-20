@@ -15,7 +15,7 @@ def clear_screen():
 def save_lines(data):
     with open('book.txt', 'a', encoding='utf8') as datafile:
         data_to_save = ",".join(data) + "\n"
-        datafile.writelines(data_to_save)
+        datafile.write(data_to_save)
             
 def print_lines(dataprint):
     while(True):
@@ -46,21 +46,23 @@ def find_lines():
 
 def add_lines():
     while (True):
-            print('Добавление записи("" - выход)')
+            print('Добавление записи')
             last_name = input("Фамилия: ")
             first_name = input("Имя: ")
             patronymic = input("Отчество: ")
             phone_number = input("Номер телефона: ")
             data_to_save = [last_name, first_name, patronymic, phone_number]
-            if "" in data_to_save: return
+            lets_out = input('(Enter - выход)')
             save_lines(data_to_save)
+            if "" in lets_out: return
+
 
 def remove_lines(): # попробуй .pop
     while(True):
         show_me = []
         for line in show_lines():
             show_me.append(",".join(line))
-        request = input("Кого удалим: ")
+        request = input("Кого удалим? (Введите часть контакта): ")
         show_me = list(filter(lambda line: request not in line, show_me))
         with open('book.txt', 'w', encoding='utf8') as datafile:
             for line in show_me:
@@ -74,13 +76,13 @@ def change_lines():
         show_me = []
         for line in show_lines():
             show_me.append(",".join(line))
-        request = input("Какой номер нужно обновить: ")
+        request = input("Чей номер нужно обновить: ")
         update_number = []
-        update_number = (show_me[0]).split(",")
-        update_number[3] = (" "+input("Новый номер: "))
+        update_number = list(filter(lambda line: request in line, show_me))
+        update_number = update_number[0].split(",")
+        update_number[3] = (+input("Новый номер: "))
         show_me = list(filter(lambda line: request not in line, show_me))
         show_me.append(",".join(update_number))
-        print(show_me)
         with open('book.txt', 'w', encoding='utf8') as datafile:
             for line in show_me:
                 datafile.write(line+'\n')
