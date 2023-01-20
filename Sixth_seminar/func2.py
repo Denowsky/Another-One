@@ -8,8 +8,8 @@ def clear_screen():
 # 2 - Найти запись по вхождению частей имени +
 # 3 - Найти запись по телефону +
 # 4 - Добавить новый контакт +
-# 5 - Удалить контакт -
-# 6 - Изменить номер телефона у контакта -
+# 5 - Удалить контакт +
+# 6 - Изменить номер телефона у контакта +
 # 7 - Выход +
 
 def save_lines(data):
@@ -57,7 +57,7 @@ def add_lines():
             if "" in lets_out: return
 
 
-def remove_lines(): # попробуй .pop
+def remove_lines(): 
     while(True):
         show_me = []
         for line in show_lines():
