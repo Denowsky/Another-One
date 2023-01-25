@@ -1,2 +1,3 @@
 m1, 5, bus1, driver_1
 m2, 10, bus2, driver_2
+m3, 9, bus3, driver_3

@@ -76,7 +76,7 @@ def show_route(route):
 def add_route():
     count = 0
     while(True):
-        with open('routes.txt', 'r+', encoding='utf8') as datafile:
+        with open('route.txt', 'r+', encoding='utf8') as datafile:
             answer = input("Enter - вернуться или Введите рейсовый номер: ")
             number = input("Введите данные автобуса(Id): ")
             driver = input("Введите данные водителя(Id): ")
