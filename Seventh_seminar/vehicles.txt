@@ -1,0 +1,3 @@
+bus1, p009re45, Uaz_Buhanka
+bus2, g778re99, PaZ_ik
+bus3, h606lk77, Mercedes
