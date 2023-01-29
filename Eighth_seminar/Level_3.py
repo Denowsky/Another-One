@@ -15,8 +15,7 @@ def Calc(list_1):
                 a+=list_1[i+1]
             case "-":
                 a-=list_1[i+1]
-    print(*list_1, sep= " ", end="")
-    return print(f' = {a}')
+    return a
             
 def Initial(list_1):
     for i in range(0, len(list_1),2):
@@ -29,4 +28,4 @@ def Initial(list_1):
         list_1[i]=int(list_1[i])
     return list_1
 
-Calc(Initial(MakeAction(test)))
+print(f'{test} = {Calc(Initial(MakeAction(test)))}')
