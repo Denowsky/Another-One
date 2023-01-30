@@ -21,17 +21,30 @@ def MakeAction(data):
 
 def MakeOperation(list_1):
     list_1 = list_1.split(" ")
-    a = int(list_1[0])
+    for i in range(0, len(list_1),2):
+        if '*' in list_1[i]:
+            temp = list_1[i].split('*')
+            list_1[i] = int(temp[0])*int(temp[1])
+        elif '/' in list_1[i]:
+            temp = list_1[i].split('/')
+            list_1[i] = int(temp[0])/int(temp[1])
+        list_1[i]=int(list_1[i])
+    for j in range(1, len(list_1)-1,2):
+        if list_1[j] == "*":
+            list_1[j-1] = list_1[j-1]*list_1[j+1]
+            list_1.pop(j)
+            list_1.pop(j)
+        elif list_1[j] == "/":
+            list_1[j-1] = list_1[j-1]/list_1[j+1]
+            list_1.pop(j)
+            list_1.pop(j)  
+    a = list_1[0]
     for i in range(1,len(list_1)-1,2):   
         match list_1[i]:
             case "+":
-                a+=int(list_1[i+1])
+                a+=list_1[i+1]
             case "-":
-                a-=int(list_1[i+1])
-            case "*":
-                a*=int(list_1[i+1])
-            case "/":
-                a/=int(list_1[i+1])
+                a-=list_1[i+1]
     return a
                    
 print(f'{test} = {MakeAction(test)}')
