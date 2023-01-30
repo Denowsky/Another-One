@@ -2,7 +2,7 @@
 # Действия разделяются скобками
 # (12 - 4) * 2 
 
-test = '(12 - 4) * 2'
+test = '3*3 + 7/2 + (12 - 4) * 2'
 def MakeAction(data):
     pos_first = 0
     pos_second = 0
@@ -28,7 +28,8 @@ def MakeOperation(list_1):
         elif '/' in list_1[i]:
             temp = list_1[i].split('/')
             list_1[i] = int(temp[0])/int(temp[1])
-        list_1[i]=int(list_1[i])
+        if type(list_1[i]) == str:
+            list_1[i]=int(list_1[i])
     for j in range(1, len(list_1)-1,2):
         if list_1[j] == "*":
             list_1[j-1] = list_1[j-1]*list_1[j+1]
