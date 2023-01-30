@@ -2,7 +2,7 @@
 # Действия разделяются скобками
 # (12 - 4) * 2 
 
-test = '3*3 + 7/2 + (12 - 4) * 2'
+test = '(12 - 4) * 2'
 def MakeAction(data):
     pos_first = 0
     pos_second = 0
