@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\sanden\OneDrive - Inter IKEA Group\Documents\Кладовка Дениса\GIT\MyGit\Homework\lection\pipPy\.folder"
+VIRTUAL_ENV="C:\Users\Densa\OneDrive\Документы\Git\Homework\lection\pipPy\.folder"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

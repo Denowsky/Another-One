@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\sanden\OneDrive - Inter IKEA Group\Documents\Кладовка Дениса\GIT\MyGit\Homework\lection\pipPy\.folder
+set VIRTUAL_ENV=C:\Users\Densa\OneDrive\Документы\Git\Homework\lection\pipPy\.folder
 
 if not defined PROMPT set PROMPT=$P$G
 
